@@ -30,3 +30,7 @@ Add opportunity:
 
 https://localhost:5001/api/v1/JobOpportunity?name=Database Analyst - GET with filters.
 
+To run the project:
+```
+dotnet run
+```
