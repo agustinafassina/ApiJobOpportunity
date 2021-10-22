@@ -1,9 +1,9 @@
 # ApiJobOpportunity
 This is a repository about a job search with .net core 3.1.
 The service consumes an external service, sends subscriptions for registered users and saves the data in memory.
+##
 
-
-## Endpoints:
+Endpoints:
 https://localhost:5001/api/v1/JobOpportunity/suscriptions - POST
 Add user:
 ```
