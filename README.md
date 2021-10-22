@@ -15,14 +15,18 @@ Add user:
 }
 ```
 https://localhost:5001/api/v1/JobOpportunity/suscriptions/user - GET
+
 https://localhost:5001/api/v1/JobOpportunity - POST
+
 Add opportunity:
+```
 {
 	"id": 1,
 	"name": "Database Analyst",
 	"country": "Argentina",
 	"salary": 1545
 }
+```
 
 https://localhost:5001/api/v1/JobOpportunity?name=Database Analyst - GET with filters.
 
