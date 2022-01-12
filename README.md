@@ -35,8 +35,4 @@ To run the project:
 dotnet run
 ```
 
-Structure
-<br>
-![image](https://user-images.githubusercontent.com/16559731/149221060-f9e1fdbc-030d-4c96-b899-11ebf3338c3c.png)
-
 	
