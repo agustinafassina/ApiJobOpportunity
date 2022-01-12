@@ -34,3 +34,9 @@ To run the project:
 ```
 dotnet run
 ```
+
+Structure:
+*Configuration
+*Models
+*Services
+	
