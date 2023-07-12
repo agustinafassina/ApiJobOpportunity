@@ -13,5 +13,5 @@ RUN dotnet publish -c Release -o /release
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:3.1
 WORKDIR /app
-COPY --from=build /release ./ 
-ENTRYPOINT ["dotnet", "ApiJobOpportunity.dll"]
+COPY --from=build /release ./
+ENTRYPOINT ["dotnet", "ApiTwo.dll"]

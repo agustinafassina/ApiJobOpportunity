@@ -4,11 +4,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using ApiJobOpportunity.Models;
-using Microsoft.EntityFrameworkCore;
-using ApiJobOpportunity.Services;
 
-namespace ApiJobOpportunity
+namespace ApiTwo
 {
     public class Startup
     {
@@ -22,14 +19,13 @@ namespace ApiJobOpportunity
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApiDBContext>(opt => opt.UseInMemoryDatabase(databaseName: "ApiJob"));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiJobOpportunity", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiTwo", Version = "v1" });
             });
 
-            services.AddTransient<IJobOpportunityService, JobOpportunityService>();
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,7 +35,7 @@ namespace ApiJobOpportunity
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiJobOpportunity v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiTwo v1"));
             }
 
             app.UseHttpsRedirection();
@@ -52,6 +48,8 @@ namespace ApiJobOpportunity
             {
                 endpoints.MapControllers();
             });
+
+            app.UseCors();
         }
     }
 }
